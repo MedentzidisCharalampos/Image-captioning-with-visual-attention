@@ -35,7 +35,7 @@ Load the pretrained Imagenet weights:
 We create a tf.keras model where the output layer is the last convolutional layer in the InceptionV3 architecture. The shape of the output of this layer is 8x8x2048.
 
 1. We forward each image through the network and store the resulting vector in a dictionary (image_name --> feature_vector).
-2. After all the images are passed through the network, you pickle the dictionary and save it to disk.
+2. After all the images are passed through the network, pickle the dictionary and save it to disk.
 
 Caching the features extracted from InceptionV3:
 
