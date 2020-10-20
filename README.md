@@ -69,6 +69,6 @@ The model architecture is inspired by the Show, Attend and Tell paper (https://a
 
 # Caption
 
-1.The evaluate function is similar to the training loop, except you don't use teacher forcing here. The input to the decoder at each time step is its previous predictions along with the hidden state and the encoder output.
+1. The evaluate function is similar to the training loop, except you don't use teacher forcing here. The input to the decoder at each time step is its previous predictions along with the hidden state and the encoder output.
 2. Stop predicting when the model predicts the end token.
 3. And store the attention weights for every time step.
