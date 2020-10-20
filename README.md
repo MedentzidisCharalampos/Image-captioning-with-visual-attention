@@ -78,4 +78,4 @@ The model architecture is inspired by the Show, Attend and Tell paper (https://a
 <p align="center">
   <img src="https://github.com/MedentzidisCharalampos/Image-captioning-with-visual-attention/blob/main/output_caption.png" />
 </p>  
-<p align="center">  Figure 1. Prediction of the Caption. <p>
+<p align="center">  Figure 3. The predicted caption. <p>
