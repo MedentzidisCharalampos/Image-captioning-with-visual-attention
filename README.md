@@ -48,3 +48,27 @@ We pre-process each image with InceptionV3 and cache the output to disk. Caching
 3. We create word-to-index and index-to-word mappings.
 4. We pad all sequences to be the same length as the longest one.
 
+# Model
+
+The model architecture is inspired by the Show, Attend and Tell paper (https://arxiv.org/pdf/1502.03044.pdf).
+
+1. Extract the features from the lower convolutional layer of InceptionV3 giving us a vector of shape (8, 8, 2048).
+2. Squash that to a shape of (64, 2048).
+3. This vector is then passed through the CNN Encoder (which consists of a single Fully connected layer).
+4. The RNN (here GRU) attends over the image to predict the next word.
+
+# Training
+
+1. Extract the features and pass those features through the encoder.
+2. The encoder output, hidden state(initialized to 0) and the decoder input (which is the start token) is passed to the decoder.
+3. The decoder returns the predictions and the decoder hidden state.
+3. The decoder hidden state is then passed back into the model and the predictions are used to calculate the loss.
+4. Use teacher forcing to decide the next input to the decoder.
+5. Teacher forcing is the technique where the target word is passed as the next input to the decoder.
+6. The final step is to calculate the gradients and apply it to the optimizer and backpropagate.
+
+# Caption
+
+T1. he evaluate function is similar to the training loop, except you don't use teacher forcing here. The input to the decoder at each time step is its previous predictions along with the hidden state and the encoder output.
+2. Stop predicting when the model predicts the end token.
+3. And store the attention weights for every time step.
