@@ -11,7 +11,7 @@ Given an image like the example below, our goal is to generate a caption such as
 <p align="center">
   <img src="https://github.com/MedentzidisCharalampos/Image-captioning-with-visual-attention/blob/main/prediction_caption.png" />
 </p>  
-<p align="center">  Figure 2. Prediction of the Caption. <p>
+<p align="center">  Figure 2. Desired Prediction of the Caption. <p>
   
 # Download the dataset
 
